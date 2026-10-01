@@ -1,26 +1,27 @@
-def go_down(n):
-    ways_down = [0] * 21
-    ways_down[1] = 1
-    ways_down[2] = 1
-    
+def f_counter(n):
+    f_list = [0] * 73
+
+    f_list[1] = 1
+    f_list[2] = 1
+
     for i in range(3, n + 1):
-        ways_down[i] = ways_down[i - 1] + ways_down[i - 2]
+        f_list[i] = f_list[i - 1] + f_list[i - 2]
     
-    return ways_down[n]
+    return f_list[n]
 
 def get_value(first, second):
     while True:
         try:
-            user_input = input(f"Сколько этажей в доме от {first} до {second}: ")
+            user_input = input(f"Введите порядковый номер числа Фибоначчи от {first} до {second}: ")
             number = int(user_input)
 
             if first <= number <= second:
                 return number
             else:
-                print(f"Строители были пьяными и дальше {second} этажа боялись строить")
+                print(f"Дальше {second} не надо")
         except ValueError:
-            print(f"Строители не настолько пьяны, попробуйте ещё раз")
+            print(f"Порядковый номер, но не что-то другое")
 
-building_height = get_value(1, 20)
-result = go_down(building_height)
-print(f"Спуститься с {building_height} этажа можно {result} способами")
+f_max = get_value(1, 72)
+result = f_counter(f_max)
+print(f"Порядковый номер {f_max}, Число Фибоначчи  {result} ")
