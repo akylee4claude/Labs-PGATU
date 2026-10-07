@@ -10,7 +10,8 @@ def step_counter(k, n):
 def get_value(first, second):
     while True:
         try:
-            user_input = input(f"Введите через пробел максимальный прыжок {first} и кол-во ступеней {second}: ")
+            print(f"Введите через пробел максимальный прыжок и кол-во ступеней от {first} до {second}: ")
+            user_input = input(f"Учтите что максимальный прыжок не может превышать кол-во ступеней: ")
             k, n = map(int, user_input.split())
             
             if first <= n <= second:
@@ -20,7 +21,7 @@ def get_value(first, second):
                     print(f"От кролика осталась красная лужица в стене")
             else:
                 print(f"Кролик умер от усталости")
-   
+
         except ValueError:
             print(f"У кролика есть чувства")
 
