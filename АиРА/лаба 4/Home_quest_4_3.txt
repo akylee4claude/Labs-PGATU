@@ -1,0 +1,26 @@
+from random import random as rnd
+from math import hypot, pi
+
+amount, cnt = 10_000_000, 0
+
+for _ in range(amount):
+
+    x, y = rnd(), rnd()
+
+    if hypot(x, y) <= 1.0:
+
+        cnt += 1
+
+Pi = 4 * cnt / amount
+
+print(Pi, pi)
+
+Сделать:
+3 - попробуйте сделать циклом while поиск значения Pi пока не войдём в точность epsilon
+
+посмотреть для этих зщеначений точности:
+
+    = 10**-1  
+    = 10**-2  
+    = 10**-3  
+    = 10**-4  
